@@ -1,0 +1,154 @@
+
+<div class="wrapper">
+    
+  <div class="box header">
+    <div class="box gate">
+      Gate: {{Gate}}
+    </div>
+  </div>
+
+  <!-- ********************************************************** -->
+  <!-- Flugdaten -->
+  <!-- ********************************************************** -->
+  <div class="box flug">
+
+    <div class="flugdaten">
+      <div class="item a">
+        <div class="label">Flugnummer</div>
+        <div class="wert">{{flug.flugnummer}}</div>
+      </div>
+      <div class="item b">
+        <div class="label">Registration</div>
+        <div class="wert">{{flug.registration}}</div>
+      </div>
+      <div class="item c">
+        <div class="label">LFZ Typ</div>
+        <div class="wert">{{flug.typ}}</div>
+      </div>
+      <div class="item d">
+        <div class="label">Ziel</div>
+        <div class="wert">{{flug.ziel}}</div>
+      </div>
+      <div class="item e">
+        <div class="label">SOBT</div>
+        <div class="wert">{{flug.sobt}}</div>
+      </div>
+      <div class="item f">
+        <div class="label">EOBT</div>
+        <div class="wert">{{flug.eobt}}</div>
+      </div>
+      <div class="item g">
+        <div class="label">TOBT</div>
+        <div class="wert">{{flug.tobt}}</div>
+      </div>
+      <div class="item h"></div>
+      <div class="item i">
+        <div class="label">Status</div>
+        <div class="wert">
+          <font class="blink" color="red"><strong>{{flug.status}}</strong></font>
+        </div>
+      </div>
+      <div class="item j">
+        <div class="label">Nächster Flug</div>
+        <div class="wert2">{{flug.n_flugnummer}}</div>
+      </div>
+      <div class="item k">
+        <div class="label">Ziel</div>
+        <div class="wert2">{{flug.n_ziel}}</div>
+      </div>
+      <div class="item l">
+        <div class="label">SOBT</div>
+        <div class="wert2">{{flug.n_sobt}}</div>
+      </div>
+      <div class="item m">
+        <div class="label">EOBT</div>
+        <div class="wert2">{{flug.n_eobt}}</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ********************************************************** -->
+  <!-- Bus -->
+  <!-- ********************************************************** -->
+
+  <div class="box bus">
+
+    <mat-card *ngFor="let best of bestellungen">
+
+      <div class="bus-strip">
+        <div class="strip sa"><strong>{{best.bustyp}}</strong></div>
+        <div class="strip sb"><strong>{{best.busknz}}</strong></div>
+        <div class="strip sc"><strong>{{best.busstatus}}</strong></div>
+        <div class="strip sd">{{best.bestellt}}</div>
+        <div class="strip se">{{best.angenommen}}</div>
+        <div class="strip sf">{{best.amgate}}</div>
+        <div class="strip sg">
+          <button mat-icon-button>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- <p>{{best.bustyp}}</p>
+      <p>Bestellt: {{best.bestellt}} / Am Gate: {{best.amgate}} </p> -->
+    </mat-card>
+
+  </div>
+
+
+  <!-- ********************************************************** -->
+  <!-- Toolbar -->
+  <!-- ********************************************************** -->
+
+  <div class="box toolbar">
+
+    <button mat-stroked-button color="basic" routerLink="" matTooltip="Logout">
+      <mat-icon>arrow_back_ios</mat-icon>
+      <!-- Logout -->
+    </button>
+
+    <button mat-stroked-button color=primary matTooltip="Beginn Boarding" (click)="setBBoarding()">
+      <mat-icon>directions_walk</mat-icon>
+      <!-- Begin Boarding -->
+    </button>
+
+    <button mat-stroked-button color="accent" matTooltip="Ende Boarding" (click)="setEBoarding()">
+      <mat-icon>person_add_disabled</mat-icon>
+      <!-- End-of-Boarding -->
+    </button>
+
+    <button mat-stroked-button color="basic" matTooltip="Standardabruf" (click)="clearBoarding()">
+      <mat-icon>record_voice_over</mat-icon>
+      <!-- Standard Abruf -->
+    </button>
+
+    <button mat-stroked-button color="basic" matTooltip="Last Call">
+      <mat-icon>directions_run</mat-icon>
+      <!-- Last Call  -->
+    </button>
+
+    <button mat-stroked-button color="basic" matTooltip="PAX Info">
+      <mat-icon>transfer_within_a_station</mat-icon>
+      <!-- PAX Info -->
+    </button>
+
+    <button mat-stroked-button color="basic" matTooltip="Hilfe">
+      <mat-icon>live_help</mat-icon>
+      <!-- Hilfe -->
+    </button>
+
+    <button mat-stroked-button color="warn" matTooltip="Bestelle Tenderbus" (click)="addBestellung('Tenderbus')">
+      <mat-icon>airport_shuttle</mat-icon>
+      <!-- Tenderbus -->
+    </button>
+
+    <button mat-stroked-button color="warn" matTooltip="Bestelle Crewbus" (click)="addBestellung('Crewbus')">
+      <mat-icon>group</mat-icon>
+      <!-- Crewbus -->
+    </button>
+
+  </div>
+
+</div>

@@ -1,0 +1,217 @@
+.body {
+    margin: 30px;
+}
+
+.header {
+    grid-area: header;
+    background-image: url('./../../assets/header03.png');
+}
+
+.flug {
+    grid-area: flug;
+}
+
+.bus {
+    grid-area: bus;
+}
+
+
+.toolbar {
+    grid-area: toolbar;
+}
+
+
+/* *************************** */
+/* main boxes */
+/* *************************** */
+
+.wrapper {
+    display: grid;
+    margin-left: 5px;
+    margin-right: 5px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 80px 410px 108px;
+    grid-template-areas: "header header header" "flug flug bus" "toolbar toolbar toolbar";
+    color: #444;
+}
+
+.box {
+    background-color: rgb(102, 102, 102);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    /* font-size: 150%; */
+}
+
+.gate {
+    background-color: #ffaf02;
+    font-size: 30px;
+    width: 150px;
+}
+
+.header {
+    background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.toolbar {
+    background-color: white;
+}
+
+/* button {
+    margin: 5px;
+    height: 80px;
+    width: 95px;
+    font-size: 20px;
+} */
+
+.mat-stroked-button {
+    margin: 5px;
+    height: 80px;
+    width: 95px;
+    font-size: 20px;
+}
+
+
+/* *********************************************************** */
+
+/* Flugdaten */
+
+/* *********************************************************** */
+
+.flugdaten {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: #444;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.item {
+    background-color: rgb(61, 61, 61);
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.i {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+}
+
+/* Flug1 */
+.label {
+    font-size: 12px;
+}
+
+.wert {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+/* Flug2 */
+.wert2 {
+    font-size: 32px;
+    text-align: center;
+    color: rgb(247, 247, 128);
+}
+
+
+/* *************************** */
+/* Bus Anzeige */
+/* *************************** */
+
+
+.best {
+    margin: 1px;
+}
+
+.bus-strip {
+    display: grid;
+    grid-gap: 1px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: #fff;
+        color: #444;
+    }
+
+    .strip {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        padding: 4px;
+        text-align: center;
+    }
+
+    .sa {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 30px;
+    }
+
+    .sb {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 30px;
+        color: rgb(207, 226, 34);
+    }
+
+    .sc {
+        grid-column: 3;
+        grid-row: 1;
+        font-size: 30px;
+    }
+
+    .sd {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .se {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .sf {
+        grid-column: 3;
+        grid-row: 2;        
+    }
+
+    .sg {
+        grid-column: 4;
+        grid-row: 1 / 3;
+        justify-content: center;
+        align-items: center;
+    }
+
+    mat-card {
+        margin: 5px;
+        padding: 1px;
+        font-size: 16px;
+    }
+
+        
+/* *************************** */
+/* Blink funtion */
+/* *************************** */
+
+@keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+  }
+  .blink {
+    animation: blink 2s step-start 0s infinite;
+    -webkit-animation: blink 2s step-start 0s infinite;
+    font-size: 60px;
+  }
+
+
+
